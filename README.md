@@ -66,6 +66,18 @@ The official XAMPP manager-osx:
 
 This replacement uses Python's built-in Tkinter, which is stable, native, and actively maintained.
 
+## Related Projects
+
+- [FlyEnv](https://github.com/xpf0000/flyenv) - A full local dev stack replacement. 
+  Much heavier; replaces XAMPP entirely rather than fixing its GUI.
+- [lokcalDev](https://github.com/unkownpr/lokcalDev) - Modern Tauri-based dev manager.
+  Again, a stack replacement, not a drop-in GUI fix.
+- [MAMP](https://www.mamp.info) / [Laravel Herd](https://herd.laravel.com) - 
+  Commercial alternatives that require migrating your entire setup.
+
+This project is different: it's a **zero-migration fix**. Keep your existing XAMPP 
+installation, htdocs folder, databases, and configs. Just replace the broken GUI.
+
 ## License
 
 MIT License
