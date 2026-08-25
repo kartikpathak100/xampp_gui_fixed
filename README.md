@@ -1,15 +1,13 @@
-TBH just use docker now, Xampp had been a great tool. Only recommended for entities who want to specifically use Xampp.
-
-# xampp_gui_fixed
-Fix XAMPP manager-osx white screen, blank window, and broken GUI on macOS Sonoma, Sequoia, and Apple Silicon with this lightweight Python replacement.
-
 # XAMPP Control Panel for macOS
 
-A modern, native Python/Tkinter replacement for the broken `manager-osx` GUI that ships with XAMPP on macOS. If you've been staring at a white/blank XAMPP Manager window, this is for you.
+Fix XAMPP manager-osx white screen, blank window, and broken GUI on macOS Sonoma, Sequoia, and Apple Silicon with this lightweight Python replacement.
+
+> **Note:** XAMPP itself is increasingly unmaintained on macOS. If you're starting fresh, consider [Laravel Herd](https://herd.laravel.com) or [Docker](https://www.docker.com) instead. This tool is for people who already have XAMPP installed and just need the GUI working again.
 
 ## Problem
 
-XAMPP's official `manager-osx` app is built on an outdated wxWidgets framework and is notoriously broken on modern macOS versions (Sonoma, Sequoia, Apple Silicon). Common symptoms include:
+XAMPP's official `manager-osx` app is built on an outdated wxWidgets framework and is notoriously broken on modern macOS. Common symptoms include:
+
 - Blank white window on launch
 - Missing or unclickable buttons
 - Crash on startup
@@ -17,7 +15,7 @@ XAMPP's official `manager-osx` app is built on an outdated wxWidgets framework a
 
 ## Solution
 
-This Python app provides a clean, functional control panel for managing your XAMPP installation.
+A single-file Python/Tkinter control panel that works with your existing XAMPP installation. No migration needed - keep your htdocs, databases, and configs.
 
 ## Features
 
@@ -40,52 +38,32 @@ This Python app provides a clean, functional control panel for managing your XAM
 
 ```bash
 # Clone the repository
-git clone https://github.com/YOUR_USERNAME/xampp-control-panel-macos.git
-cd xampp-control-panel-macos
+git clone https://github.com/kartikpathak100/xampp_gui_fixed.git
+cd xampp_gui_fixed
 
 # Run the app
 python3 xampp-control.py
 ```
 
-Or just download `xampp-control.py` and double-click it (may need to right-click > Open the first time due to Gatekeeper).
-
-## Usage
-
-1. Launch the app
-2. Click **Start All** to start Apache and MySQL
-3. Click **localhost** to open your web root in the browser
-4. Click **phpMyAdmin** to manage databases
-
-The app will prompt for your macOS password when starting/stopping services - this is normal and required for XAMPP to bind to ports 80 and 3306.
+Or just download `xampp-control.py` and double-click it (may need to right-click &gt; Open the first time due to Gatekeeper).
 
 ## Why This Exists
 
 The official XAMPP manager-osx:
+
 - Ships with an Intel-only `osx-x86_64` binary that fails to render on Apple Silicon
 - Uses an unmaintained wxWidgets UI framework
-- Has a [blank buttons/white screen bug](https://stackoverflow.com/questions/52785071) that has persisted for years across multiple XAMPP versions
+- Has a [blank buttons/white screen bug](https://stackoverflow.com/questions/52785071) that has persisted for years
 - Provides no useful error messages when services fail to start
 
 This replacement uses Python's built-in Tkinter, which is stable, native, and actively maintained.
 
 ## Related Projects
 
-- [FlyEnv](https://github.com/xpf0000/flyenv) - A full local dev stack replacement. 
-  Much heavier; replaces XAMPP entirely rather than fixing its GUI.
-- [lokcalDev](https://github.com/unkownpr/lokcalDev) - Modern Tauri-based dev manager.
-  Again, a stack replacement, not a drop-in GUI fix.
-- [MAMP](https://www.mamp.info) / [Laravel Herd](https://herd.laravel.com) - 
-  Commercial alternatives that require migrating your entire setup.
-
-This project is different: it's a **zero-migration fix**. Keep your existing XAMPP 
-installation, htdocs folder, databases, and configs. Just replace the broken GUI.
+- [FlyEnv](https://github.com/xpf0000/flyenv) - Full local dev stack replacement (heavier, replaces XAMPP entirely)
+- [Laravel Herd](https://herd.laravel.com) - Modern native macOS dev environment (recommended for new projects)
+- [MAMP](https://www.mamp.info) - Classic GUI-based alternative to XAMPP
 
 ## License
 
 MIT License
-
-## Disclaimer
-
-This is an unofficial community project. Not affiliated with Apache Friends or the official XAMPP project.
-
-xampp, macos, control-panel, gui, manager-osx, apache, mysql, php, apple-silicon, sequoia, white-screen-fix, tkinter, python3
