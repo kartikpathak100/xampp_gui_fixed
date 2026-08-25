@@ -255,6 +255,11 @@ class XAMPPController:
             frame.pack(fill=tk.X)
             ttk.Label(frame, text=name, width=20).pack(side=tk.LEFT)
             ttk.Button(frame, text="Open", command=lambda p=path: subprocess.run(['open', '-t', p])).pack(side=tk.RIGHT)
+   
+    def fix_permissions(self):
+        script = 'do shell script "sudo chmod -R 777 /Applications/XAMPP/xamppfiles/temp/ && sudo chown -R daemon:daemon /Applications/XAMPP/xamppfiles/var/mysql/" with administrator privileges'
+        subprocess.run(['osascript', '-e', script])
+        messagebox.showinfo("Done", "Permissions fixed. Try starting MySQL again.")
     
     def show_about(self):
         messagebox.showinfo(
