@@ -1,3 +1,5 @@
+TBH just use docker now, Xampp had been a great tool. Only recommended for entities who want to specifically use Xampp.
+
 # xampp_gui_fixed
 Fix XAMPP manager-osx white screen, blank window, and broken GUI on macOS Sonoma, Sequoia, and Apple Silicon with this lightweight Python replacement.
 
